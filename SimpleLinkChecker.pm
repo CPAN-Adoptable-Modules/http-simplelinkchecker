@@ -2,14 +2,14 @@
 package HTTP::SimpleLinkChecker;
 use strict;
 
-use vars qw($UA $ERROR $VERSION @EXPORT_OK);
+use vars qw($ERROR $VERSION @EXPORT_OK);
 
 use HTTP::Request;
 use LWP::UserAgent;
 
 @EXPORT_OK = qw(check_link);
 
-$UA = LWP::UserAgent->new();
+my $UA = LWP::UserAgent->new();
 
 $VERSION = sprintf "%d.%02d", q$Revision$ =~ m/ (\d+) \. (\d+)/x;
 
@@ -51,6 +51,11 @@ sub check_link
 	return $response->code;
 	}
 
+sub user_agent
+	{
+	return $UA;
+	}
+	
 1;
 
 =head1 NAME
@@ -75,7 +80,7 @@ Perl, LWP, or the HTTP module to be able to check your
 links. This module is designed for the casual user. It has
 one function, C<check_link>, that returns the HTTP response
 code that it receives when it tries to fetch the web address
-passed to it. The undef value is returned for any failure
+passed to it. The undef value is returned for any non-HTTP failure
 and the C<$HTTP::SimpleLinkChecker::ERROR> variable is
 set.
 
@@ -83,6 +88,23 @@ The HEAD method is tried first, although if anything other than
 a good status code (those less than 400) is received, another
 request is made with the GET method.
 
+=head1 FUNCTIONS
+
+=over 4
+
+=item check_link( URL )
+
+Return the HTTP response code for URL.
+
+=item user_agent
+
+Returns a reference to the LWP::UserAgent object.  You
+can affect it directly.  See L<LWP::UserAgent>.
+
+	my $ua = HTTP::SimpleLinkChecker::user_agent;
+	$ua->from( 'joe@example.com' );
+	$ua->agent( 'Mozilla 19.2' );
+	
 =head1 AUTHOR
 
 brian d foy <bdfoy@cpan.org>
