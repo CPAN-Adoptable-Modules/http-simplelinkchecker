@@ -10,6 +10,7 @@ use LWP::UserAgent;
 @EXPORT_OK = qw(check_link);
 
 my $UA = LWP::UserAgent->new();
+$UA->env_proxy;
 
 $VERSION = sprintf "%d.%02d", q$Revision$ =~ m/ (\d+) \. (\d+)/x;
 
@@ -87,6 +88,10 @@ set.
 The HEAD method is tried first, although if anything other than
 a good status code (those less than 400) is received, another
 request is made with the GET method.
+
+If you are behind a firewall or proxy, this module picks up those
+settings through LWP::UserAgent's env_proxy() method.  See
+L<LWP::UserAgent> for more details.
 
 =head2 Functions
 
