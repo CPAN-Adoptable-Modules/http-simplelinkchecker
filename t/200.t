@@ -5,7 +5,7 @@ $test = 1;
 use HTTP::SimpleLinkChecker;
 
 my $code = &HTTP::SimpleLinkChecker::check_link(
-	'http://www.smithrenaud.com/robots.txt');
+	'http://www.perl.org');
 
 print $code == 200 ? "ok $test" : "not ok $test";
 
