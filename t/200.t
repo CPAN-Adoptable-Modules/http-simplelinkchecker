@@ -1,11 +1,10 @@
 #$Id$
-print "1..1\n";
-$test = 1;
+use Test::More tests => 1;
 
 use HTTP::SimpleLinkChecker;
 
 my $code = &HTTP::SimpleLinkChecker::check_link(
 	'http://www.perl.org');
 
-print $code == 200 ? "ok $test" : "not ok $test";
+is( $code, 200, "I can talk to perl.org!" );
 

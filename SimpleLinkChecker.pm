@@ -21,14 +21,14 @@ sub check_link
 		$ERROR = 'Received no argument';
 		return;
 		}
-	
+
 	my $request = HTTP::Request->new('HEAD', $link);
 	unless( ref $request )
 		{
 		$ERROR = 'Could not create HEAD request';
 		return;
 		}
-	
+
 	my $response = $UA->request($request);
 
 	if( ref $response and $response->code >= 400 )
@@ -41,13 +41,13 @@ sub check_link
 			}
 		$response = $UA->request($request);
 		}
-	
+
 	unless( ref $response )
 		{
 		$ERROR = 'Could not get response';
 		return;
 		}
-	
+
 	return $response->code;
 	}
 
@@ -55,7 +55,7 @@ sub user_agent
 	{
 	return $UA;
 	}
-	
+
 1;
 
 =head1 NAME
@@ -88,7 +88,7 @@ The HEAD method is tried first, although if anything other than
 a good status code (those less than 400) is received, another
 request is made with the GET method.
 
-=head1 FUNCTIONS
+=head2 Functions
 
 =over 4
 
@@ -104,9 +104,28 @@ can affect it directly.  See L<LWP::UserAgent>.
 	my $ua = HTTP::SimpleLinkChecker::user_agent;
 	$ua->from( 'joe@example.com' );
 	$ua->agent( 'Mozilla 19.2' );
-	
+
+=back
+
+=head1 SOURCE AVAILABILITY
+
+This source is part of a SourceForge project which always has the
+latest sources in CVS, as well as all of the previous releases.
+
+	http://sourceforge.net/projects/brian-d-foy/
+
+If, for some reason, I disappear from the world, one of the other
+members of the project can shepherd this module appropriately.
+
 =head1 AUTHOR
 
-brian d foy <bdfoy@cpan.org>
+brian d foy, C<< <bdfoy@cpan.org> >>
+
+=head1 COPYRIGHT
+
+Copyright (c) 2004 brian d foy.  All rights reserved.
+
+This program is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
 
 =cut
