@@ -53,8 +53,6 @@ sub check_link
 
 1;
 
-# Below is the stub of documentation for your module. You better edit it!
-
 =head1 NAME
 
 HTTP::SimpleLinkChecker - Check the HTTP response code for a link
