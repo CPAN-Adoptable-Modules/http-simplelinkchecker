@@ -1,3 +1,4 @@
+#$Id$
 package HTTP::SimpleLinkChecker;
 use strict;
 
@@ -10,7 +11,7 @@ use LWP::UserAgent;
 
 $UA = LWP::UserAgent->new();
 
-$VERSION = 0.51;
+$VERSION = sprintf "%d.%02d", q$Revision$ =~ m/ (\d+) \. (\d+)/x;
 
 sub check_link
 	{
