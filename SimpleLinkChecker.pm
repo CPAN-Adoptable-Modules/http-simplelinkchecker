@@ -87,6 +87,6 @@ request is made with the GET method.
 
 =head1 AUTHOR
 
-brian d foy <comdog@panix.com>
+brian d foy <bdfoy@cpan.org>
 
 =cut
