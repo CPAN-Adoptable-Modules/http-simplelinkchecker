@@ -18,13 +18,14 @@ unless( $@ )
 WriteMakefile(
 	'NAME'         => 'HTTP::SimpleLinkChecker',
 	'VERSION_FROM' => 'SimpleLinkChecker.pm',
+
 	'PREREQ_PM'    => { 
 		'HTTP::Request'  => '1.28',
 		'LWP::UserAgent' => '1.09',
 		},
 		
 	'MAN3PODS'     => {
-		'SimpleLinkExtor.pm' => '$(INST_MAN3DIR)/HTTP::SimpleLinkChecker.3',
+		'SimpleLinkChecker.pm' => '$(INST_MAN3DIR)/HTTP::SimpleLinkChecker.3',
 		},
 
 	'dist'         => {
