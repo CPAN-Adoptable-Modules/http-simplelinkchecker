@@ -5,3 +5,4 @@ pod_coverage.t
 prereq.t
 200.t
 403.t
+user_agent.t
