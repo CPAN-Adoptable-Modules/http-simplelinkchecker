@@ -4,3 +4,4 @@ META.yml
 Makefile
 *.gz
 .lwpcookies
+HTTP-*
