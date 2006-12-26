@@ -2,6 +2,7 @@
 package HTTP::SimpleLinkChecker;
 use strict;
 
+use base qw(Exporter);
 use vars qw($ERROR $VERSION @EXPORT_OK);
 
 use HTTP::Request;
@@ -135,9 +136,13 @@ brian d foy, C<< <bdfoy@cpan.org> >>
 
 =head1 COPYRIGHT
 
-Copyright (c) 2004-2006 brian d foy.  All rights reserved.
+Copyright (c) 2004-2007 brian d foy.  All rights reserved.
 
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
+
+=head1 LICENSE
+
+You can use this software under the same terms as Perl itself.
 
 =cut
