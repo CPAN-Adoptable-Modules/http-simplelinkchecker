@@ -3,8 +3,8 @@ examples/README
 LICENSE
 Makefile.PL
 MANIFEST
-META.yml
 README
+script/httpstatus
 SimpleLinkChecker.pm
 t/200.t
 t/403.t

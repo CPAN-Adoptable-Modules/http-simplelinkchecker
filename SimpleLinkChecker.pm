@@ -13,7 +13,7 @@ use LWP::UserAgent;
 my $UA = LWP::UserAgent->new();
 $UA->env_proxy;
 
-$VERSION = sprintf "%d.%02d", q$Revision$ =~ m/ (\d+) \. (\d+)/x;
+$VERSION = 1.14;
 
 sub check_link
 	{
