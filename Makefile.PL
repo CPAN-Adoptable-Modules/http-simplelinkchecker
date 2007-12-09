@@ -26,7 +26,7 @@ WriteMakefile(
 		},
 		
 	'MAN3PODS'     => {
-		'SimpleLinkChecker.pm' => '$(INST_MAN3DIR)/HTTP::SimpleLinkChecker.3',
+		'lib/SimpleLinkChecker.pm' => '$(INST_MAN3DIR)/HTTP::SimpleLinkChecker.3',
 		},
 
     clean  => { FILES    => q|HTTP-SimpleLinkChecker-*| },
