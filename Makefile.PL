@@ -21,6 +21,7 @@ WriteMakefile(
 	
 	'PREREQ_PM'    => { 
 		'HTTP::Request'  => '1.28',
+		'HTTP::Status'   => '0',
 		'LWP::UserAgent' => '1.09',
 		},
 		
