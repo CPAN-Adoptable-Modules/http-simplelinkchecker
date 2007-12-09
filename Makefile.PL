@@ -19,14 +19,11 @@ WriteMakefile(
 		'HTTP::Request'  => '1.28',
 		'LWP::UserAgent' => '1.09',
 		},
+
+	'EXE_FILES'    => [ 'scripts/http_status' ],
 		
 	'MAN3PODS'     => {
 		'SimpleLinkChecker.pm' => '$(INST_MAN3DIR)/HTTP::SimpleLinkChecker.3',
-		},
-
-	'dist'         => {
-		'COMPRESS'        => 'gzip -9f',
-		'SUFFIX'          => 'gz',
 		},
 
     clean  => { FILES    => q|HTTP-SimpleLinkChecker-*| },
