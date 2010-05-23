@@ -1,4 +1,3 @@
-#$Id$
 use Test::More tests => 5;
 
 use_ok( 'HTTP::SimpleLinkChecker' );

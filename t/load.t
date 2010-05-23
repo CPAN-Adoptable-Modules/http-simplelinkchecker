@@ -1,4 +1,3 @@
-# $Id$
 BEGIN { @classes = qw(HTTP::SimpleLinkChecker) }
 
 use Test::More tests => scalar @classes;

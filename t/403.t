@@ -2,7 +2,6 @@ use Test::More tests => 1;
 
 use HTTP::SimpleLinkChecker;
 
-# this won't work for robots
 my $code = HTTP::SimpleLinkChecker::check_link(
 	'http://www.pair.com/comdog/cgi-bin/403.cgi');
 
