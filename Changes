@@ -1,5 +1,8 @@
 Revision history for Perl module HTTP::SimpleLinkChecker
 
+1.16 - 2010-05-23
+	* Fix the status test for 403
+
 1.15 - Sat Dec  8 20:26:44 2007
 	* add the http_status command line program to check a URL (and the
 	links it contains)
