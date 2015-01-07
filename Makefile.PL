@@ -1,45 +1,70 @@
-use ExtUtils::MakeMaker;
-# See lib/ExtUtils/MakeMaker.pm for details of how to influence
-# the contents of the Makefile that is written.
-
 require 5.006;
+use strict;
+use warnings;
 
-eval "use Test::Manifest 1.21";
+my $github    = 'https://github.com/briandfoy/';
+my $main_file = 'lib/HTTP/SimpleLinkChecker.pm';
 
-WriteMakefile(
-	'NAME'         => 'HTTP::SimpleLinkChecker',
-	'ABSTRACT'     => 'Check the HTTP response code for a link',
-	'VERSION_FROM' => 'lib/SimpleLinkChecker.pm',
-	'LICENSE'      => 'perl',
-	'AUTHOR'       => 'brian d foy <bdfoy@cpan.org>',
-
-	'PM'           => {
-		'lib/SimpleLinkChecker.pm' => '$(INST_LIBDIR)/SimpleLinkChecker.pm',
-		},
+my %WriteMakefile = (
+	'NAME'          => 'HTTP::SimpleLinkChecker',
+	'ABSTRACT_FROM' => $main_file,
+	'VERSION_FROM'  => $main_file,
+	'LICENSE'       => 'perl',
+	'AUTHOR'        => 'brian d foy <bdfoy@cpan.org>',
 
 	'EXE_FILES'    => [ qw(script/http_status) ],
-	
-	'PREREQ_PM'    => { 
+
+	'CONFIGURE_REQUIRES' => {
+		'ExtUtils::MakeMaker' => '6.64',
+		},
+
+	'BUILD_REQUIRES' => {
+		},
+
+	'TEST_REQUIRES' => {
+		'Test::More' => '0.94',
+		},
+
+	'PREREQ_PM'     => {
 		'HTTP::Request'  => '1.28',
 		'HTTP::Status'   => '0',
 		'LWP::UserAgent' => '1.09',
 		},
-		
-	'MAN3PODS'     => {
-		'lib/SimpleLinkChecker.pm' => '$(INST_MAN3DIR)/HTTP::SimpleLinkChecker.$(MAN3EXT)',
+
+	'META_MERGE' => {
+		'meta-spec' => { version => 2 },
+		resources => {
+			repository => {
+				type => 'git',
+				url  => "$github.git",
+				web  => $github,
+				},
+			bugtraker => {
+				web    => "$github/issues",
+				},
+			homepage => $github,
+			},
 		},
 
     clean  => { FILES    => q|HTTP-SimpleLinkChecker-*| },
+	);
 
-    (
-    ( $ExtUtils::MakeMaker::VERSION ge '6.46' )
-        ? (META_MERGE => {
-            resources => {
-                homepage    => 'http://github.com/briandfoy/http-simplelinkchecker',
-                repository  => 'git://github.com/briandfoy/http-simplelinkchecker.git',
-            }
-        })
-        : ()
-    )
+sub arguments { \%WriteMakefile }
 
-);
+do_it() unless caller;
+sub do_it {
+	require File::Spec;
+	my $MM ='ExtUtils::MakeMaker';
+	my $MM_version =
+		eval{ "$MM " . $WriteMakefile{'CONFIGURE_REQUIRES'}{'ExtUtils::MakeMaker'} }
+			//
+		"$MM 6.64";
+	eval "use $MM_version";
+	eval "use Test::Manifest 1.21" 
+		if -e File::Spec->catfile( qw(t test_manifest) );
+	WriteMakefile( %WriteMakefile );
+	}
+
+
+no warnings;
+__PACKAGE__;
