@@ -1,10 +1,12 @@
 require 5.008;
+
+package HTTP::SimpleLinkChecker;
 use strict;
 use warnings;
 
 use File::Spec::Functions qw(catfile);
 
-my $module    = 'HTTP::SimpleLinkChecker';
+my $module    = __PACKAGE__;
 my $github    = 'https://github.com/briandfoy/http-simplelinkchecker';
 my $main_file = catfile( 'lib', split /::/, "$module.pm" );
 
@@ -18,7 +20,8 @@ my %WriteMakefile = (
 	'EXE_FILES'    => [ qw(script/http_status) ],
 
 	'CONFIGURE_REQUIRES' => {
-		'ExtUtils::MakeMaker' => '6.64',
+		'ExtUtils::MakeMaker'   => '6.64',
+		'File::Spec::Functions' => '0',
 		},
 
 	'BUILD_REQUIRES' => {
