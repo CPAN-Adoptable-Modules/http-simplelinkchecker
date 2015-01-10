@@ -52,7 +52,7 @@ my %WriteMakefile = (
 			},
 		},
 
-    clean  => { FILES    => q|HTTP-SimpleLinkChecker-*| },
+	clean => { FILES => "$dist-*" },
 	);
 
 sub arguments { \%WriteMakefile }
