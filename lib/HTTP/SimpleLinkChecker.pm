@@ -62,6 +62,8 @@ sub user_agent
 
 1;
 
+=encoding utf8
+
 =head1 NAME
 
 HTTP::SimpleLinkChecker - Check the HTTP response code for a link
