@@ -63,13 +63,14 @@ my %WriteMakefile = (
 		},
 
 	'TEST_REQUIRES' => {
-		'Test::More' => '0.94',
+		'Test::More' => '0.98',
 		},
 
 	'PREREQ_PM'     => {
-		'HTTP::Request'  => '1.28',
-		'HTTP::Status'   => '0',
-		'LWP::UserAgent' => '1.09',
+		'HTTP::Request'         => '1.28',
+		'HTTP::Status'          => '0',
+		'LWP::UserAgent'        => '1.09',
+		'LWP::Protocol::https'  => '1',
 		},
 
 	'META_MERGE' => {

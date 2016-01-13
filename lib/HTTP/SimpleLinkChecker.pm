@@ -4,7 +4,8 @@ use strict;
 use warnings;
 no warnings;
 
-use base qw(Exporter);
+use Exporter qw(import);
+
 use vars qw($ERROR $VERSION @EXPORT_OK);
 
 use HTTP::Request;
@@ -12,42 +13,36 @@ use LWP::UserAgent;
 
 @EXPORT_OK = qw(check_link);
 
-my $UA = LWP::UserAgent->new();
+my $UA = LWP::UserAgent->new( ssl_opts => { verify_hostname => 0 } );
 $UA->env_proxy;
 
-$VERSION = '1.16';
+$VERSION = '1.161';
 
-sub check_link
-	{
+sub check_link {
 	my $link = shift;
-	unless( defined $link )
-		{
+	unless( defined $link ) {
 		$ERROR = 'Received no argument';
 		return;
 		}
 
 	my $request = HTTP::Request->new('HEAD', $link);
-	unless( ref $request )
-		{
+	unless( ref $request ) {
 		$ERROR = 'Could not create HEAD request';
 		return;
 		}
 
 	my $response = $UA->request($request);
 
-	if( ref $response and $response->code >= 400 )
-		{
+	if( ref $response and $response->code >= 400 ) {
 		$request = HTTP::Request->new('GET', $link);
-		unless( ref $request )
-			{
+		unless( ref $request ) {
 			$ERROR = 'Could not create GET request';
 			return;
 			}
 		$response = $UA->request($request);
 		}
 
-	unless( ref $response )
-		{
+	unless( ref $response ) {
 		$ERROR = 'Could not get response';
 		return;
 		}
@@ -55,10 +50,7 @@ sub check_link
 	return $response->code;
 	}
 
-sub user_agent
-	{
-	return $UA;
-	}
+sub user_agent { $UA }
 
 1;
 
@@ -139,7 +131,7 @@ brian d foy, C<< <bdfoy@cpan.org> >>
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright © 2004-2015, brian d foy <bdfoy@cpan.org>. All rights reserved.
+Copyright © 2004-2016, brian d foy <bdfoy@cpan.org>. All rights reserved.
 
 This program is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
