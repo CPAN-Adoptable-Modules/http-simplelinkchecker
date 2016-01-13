@@ -1,5 +1,8 @@
 Revision history for Perl module HTTP::SimpleLinkChecker
 
+1.161 2016-01-13T18:25:12Z
+	* Handle HTTPS, now that LWP needs extra help
+
 1.16 - 2010-05-23
 	* Fix the status test for 403
 
