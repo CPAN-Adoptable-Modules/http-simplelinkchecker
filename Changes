@@ -1,5 +1,8 @@
 Revision history for Perl module HTTP::SimpleLinkChecker
 
+1.162 2016-01-13T20:03:15Z
+	* Fix prereq test (RT # 111166)
+
 1.161 2016-01-13T18:25:12Z
 	* Handle HTTPS, now that LWP needs extra help
 
