@@ -2,6 +2,8 @@
 use strict;
 use warnings;
 
+=encoding utf8
+
 =head1 NAME
 
 http_status - check the HTTP status of a URL
