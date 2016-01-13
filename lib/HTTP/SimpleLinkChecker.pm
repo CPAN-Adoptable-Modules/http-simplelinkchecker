@@ -16,7 +16,7 @@ use LWP::UserAgent;
 my $UA = LWP::UserAgent->new( ssl_opts => { verify_hostname => 0 } );
 $UA->env_proxy;
 
-$VERSION = '1.161';
+$VERSION = '1.162';
 
 sub check_link {
 	my $link = shift;
