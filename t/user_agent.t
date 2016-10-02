@@ -5,10 +5,10 @@ use_ok( 'HTTP::SimpleLinkChecker' );
 ok( defined &HTTP::SimpleLinkChecker::user_agent );
 
 my $UA = &HTTP::SimpleLinkChecker::user_agent();
-isa_ok( $UA, 'LWP::UserAgent');
+isa_ok( $UA, 'Mojo::UserAgent');
 
-like( $UA->agent, qr/libwww-perl/ );
+like( $UA->transactor->name, qr/Mojolicious/ );
 
 my $new_name = "brian's link checker";
-$UA->agent( $new_name );
-is( $UA->agent, $new_name );
+$UA->transactor->name( $new_name );
+is( $UA->transactor->name, $new_name );

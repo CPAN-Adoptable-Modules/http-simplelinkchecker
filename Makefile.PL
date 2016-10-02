@@ -67,10 +67,9 @@ my %WriteMakefile = (
 		},
 
 	'PREREQ_PM'     => {
-		'HTTP::Request'         => '1.28',
 		'HTTP::Status'          => '0',
-		'LWP::UserAgent'        => '1.09',
-		'LWP::Protocol::https'  => '1',
+		'IO::Socket::SSL'       => '1.94',
+		'Mojo::UserAgent'       => '0',
 		},
 
 	'META_MERGE' => {

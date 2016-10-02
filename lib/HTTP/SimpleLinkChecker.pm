@@ -8,13 +8,12 @@ use Exporter qw(import);
 
 use vars qw($ERROR $VERSION @EXPORT_OK);
 
-use HTTP::Request;
-use LWP::UserAgent;
+use Mojo::UserAgent;
 
 @EXPORT_OK = qw(check_link);
 
-my $UA = LWP::UserAgent->new( ssl_opts => { verify_hostname => 0 } );
-$UA->env_proxy;
+my $UA = Mojo::UserAgent->new();
+$UA->proxy->detect;
 
 $VERSION = '1.163';
 
@@ -25,21 +24,12 @@ sub check_link {
 		return;
 		}
 
-	my $request = HTTP::Request->new('HEAD', $link);
-	unless( ref $request ) {
-		$ERROR = 'Could not create HEAD request';
-		return;
-		}
+	my $transaction = $UA->head($link);
+	my $response = $transaction->res;
 
-	my $response = $UA->request($request);
-
-	if( ref $response and $response->code >= 400 ) {
-		$request = HTTP::Request->new('GET', $link);
-		unless( ref $request ) {
-			$ERROR = 'Could not create GET request';
-			return;
-			}
-		$response = $UA->request($request);
+	if( ! $response and $response->code >= 400 ) {
+		$transaction = $UA->get($link);
+		$response = $transaction->res;
 		}
 
 	unless( ref $response ) {
@@ -94,8 +84,8 @@ recheck "broken" links a couple times over a long period (like a day
 or two) before you decide they are really broken.
 
 If you are behind a firewall or proxy, this module picks up those
-settings through LWP::UserAgent's env_proxy() method.  See
-L<LWP::UserAgent> for more details.
+settings through Mojo::UserAgent::Proxy's detect() method.  See
+L<Mojo::UserAgent::Proxy> for more details.
 
 =head2 Functions
 
@@ -107,12 +97,11 @@ Returns the HTTP response code for URL.
 
 =item user_agent
 
-Returns a reference to the LWP::UserAgent object.  You
-can affect it directly.  See L<LWP::UserAgent>.
+Returns a reference to the Mojo::UserAgent object.  You
+can affect it directly.  See L<Mojo::UserAgent>.
 
 	my $ua = HTTP::SimpleLinkChecker::user_agent();
-	$ua->from( 'joe@example.com' );
-	$ua->agent( 'Mozilla 19.2' );
+	$ua->transactor->name( 'Mozilla 19.2' );
 
 =back
 
