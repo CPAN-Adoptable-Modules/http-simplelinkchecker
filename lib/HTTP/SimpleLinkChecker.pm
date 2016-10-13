@@ -117,6 +117,14 @@ members of the project can shepherd this module appropriately.
 
 brian d foy, C<< <bdfoy@cpan.org> >>
 
+=head2 Contributors
+
+=over 4
+
+=item * Sebastian Paaske Tørholm, C<< <Eckankar@gmail.com> >>
+
+=back
+
 =head1 COPYRIGHT AND LICENSE
 
 Copyright © 2004-2016, brian d foy <bdfoy@cpan.org>. All rights reserved.
