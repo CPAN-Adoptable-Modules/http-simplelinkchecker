@@ -1,5 +1,10 @@
 Revision history for Perl module HTTP::SimpleLinkChecker
 
+1.164 2016-10-13T03:05:27Z
+	* Use Mojo::UserAgent for the underlying client. This work was
+	contributed by Sebastian Paaske TÃ¸rholm <Eckankar@gmail.com>
+	as GitHub Issue #1 https://github.com/briandfoy/http-simplelinkchecker/issues/1
+
 1.163 2016-01-13T20:05:17Z
 	* Fix up MANIFEST
 
