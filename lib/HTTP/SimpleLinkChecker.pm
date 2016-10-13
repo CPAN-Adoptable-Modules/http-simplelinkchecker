@@ -56,8 +56,7 @@ HTTP::SimpleLinkChecker - Check the HTTP response code for a link
 
 	my $code = HTTP::SimpleLinkChecker::check_link($url);
 
-	unless( defined $code )
-		{
+	unless( defined $code ) {
 		print "Error: $HTTP::SimpleLinkChecker::ERROR\n";
 		}
 
