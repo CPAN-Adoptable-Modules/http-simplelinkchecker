@@ -15,7 +15,7 @@ use Mojo::UserAgent;
 my $UA = Mojo::UserAgent->new();
 $UA->proxy->detect;
 
-$VERSION = '1.163';
+$VERSION = '1.164';
 
 sub check_link {
 	my $link = shift;
