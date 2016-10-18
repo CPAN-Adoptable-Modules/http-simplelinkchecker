@@ -70,6 +70,7 @@ my %WriteMakefile = (
 		'HTTP::Status'          => '0',
 		'IO::Socket::SSL'       => '1.94',
 		'Mojo::UserAgent'       => '0',
+		'Mojolicious'           => '4.50', # Proxy support
 		},
 
 	'META_MERGE' => {
