@@ -14,6 +14,7 @@ use Mojo::UserAgent;
 
 my $UA = Mojo::UserAgent->new();
 $UA->proxy->detect;
+$UA->max_redirects(3);
 
 $VERSION = '1.164';
 
@@ -72,15 +73,25 @@ is set.
 
 The HEAD method is tried first, although if anything other than a good
 status code (those less than 400) is received, another request is made
-with the GET method. Note, however, that even with the best code, no
-module can control how servers decide to respond to a check, or
-control any of the myriad things that can go wrong with the network
-between you and the remote server. Some may filter requests based on
-origin IP address, user-agent type, or any other arbitrary factor.
-Some servers may not respond correctly at all. Furthermore, some
-servers might be temporarily down or overloaded. I recommend that you
-recheck "broken" links a couple times over a long period (like a day
-or two) before you decide they are really broken.
+with the GET method.
+
+The user-agent will automatically handle redirects. If you don't like
+that, you can change the user agent settings before you start:
+
+	HTTP::SimpleLinkChecker::user_agent()->max_redirects(0);
+
+The user agent is L<Mojo::UserAgent>, so anything you do with that
+module you can do with the user agent.
+
+Note that even with the best code, no module can control how
+servers decide to respond to a check, or control any of the myriad
+things that can go wrong with the network between you and the remote
+server. Some may filter requests based on origin IP address,
+user-agent type, or any other arbitrary factor. Some servers may not
+respond correctly at all. Furthermore, some servers might be
+temporarily down or overloaded. I recommend that you recheck "broken"
+links a couple times over a long period (like a day or two) before you
+decide they are really broken.
 
 If you are behind a firewall or proxy, this module picks up those
 settings through Mojo::UserAgent::Proxy's detect() method.  See

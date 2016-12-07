@@ -4,4 +4,5 @@ pod_coverage.t
 export.t
 200.t
 403.t
+www.perl6.org.t
 user_agent.t
