@@ -6,7 +6,7 @@ subtest http => sub {
 	try_it( 'http://blogs.perl.org/' );
 	};
 
-subtest http => sub {
+subtest https => sub {
 	try_it( 'https://www.perl.org/' );
 	};
 
