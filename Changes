@@ -1,5 +1,9 @@
 Revision history for Perl module HTTP::SimpleLinkChecker
 
+1.165 2016-12-07T14:21:25Z
+	* Allow the user agent to redirect a couple times. If you don't like
+	that you can turn it off as documented.
+
 1.164 2016-10-13T03:05:27Z
 	* Use Mojo::UserAgent for the underlying client. This work was
 	contributed by Sebastian Paaske TÃ¸rholm <Eckankar@gmail.com>
