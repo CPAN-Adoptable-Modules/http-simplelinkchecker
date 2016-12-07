@@ -94,7 +94,7 @@ links a couple times over a long period (like a day or two) before you
 decide they are really broken.
 
 If you are behind a firewall or proxy, this module picks up those
-settings through Mojo::UserAgent::Proxy's detect() method.  See
+settings through L<Mojo::UserAgent::Proxy>'s C<detect()> method.  See
 L<Mojo::UserAgent::Proxy> for more details.
 
 =head2 Functions
