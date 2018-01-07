@@ -19,7 +19,7 @@ $UA->max_redirects(3);
 $VERSION = '1.166';
 
 sub check_link {
-	my $link = shift;
+	my( $link ) = @_;
 	unless( defined $link ) {
 		$ERROR = 'Received no argument';
 		return;
