@@ -16,7 +16,7 @@ my $UA = Mojo::UserAgent->new();
 $UA->proxy->detect;
 $UA->max_redirects(3);
 
-$VERSION = '1.165';
+$VERSION = '1.166';
 
 sub check_link {
 	my $link = shift;
