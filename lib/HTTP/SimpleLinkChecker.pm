@@ -119,7 +119,7 @@ can affect it directly.  See L<Mojo::UserAgent>.
 
 This source is in Github:
 
-	http://github.com/briandfoy/http-simplelinkchecker
+	https://github.com/briandfoy/http-simplelinkchecker
 
 If, for some reason, I disappear from the world, one of the other
 members of the project can shepherd this module appropriately.
