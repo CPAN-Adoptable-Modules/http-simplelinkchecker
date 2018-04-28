@@ -20,6 +20,7 @@ our $VERSION = '1.167';
 
 sub check_link {
 	my( $link ) = @_;
+	say STDERR "Link is $link";
 	unless( defined $link ) {
 		$ERROR = 'Received no argument';
 		return;
