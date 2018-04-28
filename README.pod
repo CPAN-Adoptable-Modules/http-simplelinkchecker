@@ -2,6 +2,16 @@
 
 =encoding utf8
 
+=for HTML <a href="https://travis-ci.org/briandfoy/http-simplelinkchecker"><img src="https://travis-ci.org/briandfoy/http-simplelinkchecker.svg?branch=master" /></a>
+
+=for HTML <a href='https://ci.appveyor.com/project/briandfoy/http-simplelinkchecker'><img src='https://ci.appveyor.com/api/projects/status/jaafo7aqi464poya' /></a>
+
+=for HTML <a href='https://coveralls.io/github/briandfoy/http-simplelinkchecker?branch=master'><img src='https://coveralls.io/repos/github/briandfoy/http-simplelinkchecker/badge.svg?branch=master' alt='Coverage Status' /></a>
+
+=for HTML <a href="https://github.com/briandfoy/http-simplelinkchecker/blob/master/LICENSE"><img src="https://img.shields.io/cpan/l/HTTP-SimpleLinkChecker.svg" /></a>
+
+=for HTML <a href="http://www.metacpan.org/module/HTTP::SimpleLinkChecker"><img src="https://img.shields.io/cpan/v/HTTP-SimpleLinkChecker.svg" /></A>
+
 =head1 The HTTP::SimpleLinkChecker module
 
 This is the I<README> for the L<HTTP::SimpleLinkChecker> Perl module. You're probably 
