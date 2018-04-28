@@ -6,7 +6,7 @@ no warnings;
 
 use Exporter qw(import);
 
-use vars qw($ERROR $VERSION @EXPORT_OK);
+use vars qw($ERROR @EXPORT_OK);
 
 use Mojo::UserAgent;
 
@@ -16,7 +16,7 @@ my $UA = Mojo::UserAgent->new();
 $UA->proxy->detect;
 $UA->max_redirects(3);
 
-$VERSION = '1.166';
+our $VERSION = '1.167';
 
 sub check_link {
 	my( $link ) = @_;
