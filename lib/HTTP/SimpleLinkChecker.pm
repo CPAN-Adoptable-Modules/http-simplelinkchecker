@@ -122,9 +122,6 @@ This source is in Github:
 
 	https://github.com/briandfoy/http-simplelinkchecker
 
-If for some reason I disappear from the world, one of the other
-members of the project can shepherd this module appropriately.
-
 =head1 AUTHOR
 
 brian d foy, C<< <bdfoy@cpan.org> >>
