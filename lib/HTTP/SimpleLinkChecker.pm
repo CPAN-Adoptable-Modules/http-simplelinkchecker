@@ -140,6 +140,6 @@ brian d foy, C<< <bdfoy@cpan.org> >>
 Copyright © 2004-2018, brian d foy <bdfoy@cpan.org>. All rights reserved.
 
 This program is free software; you can redistribute it and/or modify
-it under the Artistic License 2.0
+it under the Artistic License 2.0.
 
 =cut
