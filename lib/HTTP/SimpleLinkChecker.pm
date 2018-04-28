@@ -1,4 +1,5 @@
 package HTTP::SimpleLinkChecker;
+use v5.10.1; # Mojolicious requires this
 use strict;
 
 use warnings;
