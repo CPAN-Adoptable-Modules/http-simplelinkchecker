@@ -6,11 +6,11 @@ no warnings;
 
 use Exporter qw(import);
 
-use vars qw($ERROR @EXPORT_OK);
+use vars qw($ERROR);
 
 use Mojo::UserAgent;
 
-@EXPORT_OK = qw(check_link);
+our @EXPORT_OK = qw(check_link);
 
 my $UA = Mojo::UserAgent->new();
 $UA->proxy->detect;
