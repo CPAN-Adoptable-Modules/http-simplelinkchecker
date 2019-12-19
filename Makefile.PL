@@ -35,6 +35,13 @@ Perl.
 
 =cut
 
+print <<"HERE";
+======================================================================
+
+
+======================================================================
+HERE
+
 use File::Spec::Functions qw(catfile);
 
 my $module    = __PACKAGE__;
@@ -63,7 +70,7 @@ my %WriteMakefile = (
 		},
 
 	'TEST_REQUIRES' => {
-		'Test::More' => '0.98',
+		'Test::More' => '1',
 		},
 
 	'PREREQ_PM'     => {
