@@ -72,3 +72,6 @@
 \.lwpcookies
 
 iterate-new.t
+\bMANIFEST\s\d
+\bChanges\s\d
+
