@@ -55,6 +55,9 @@ HTTP::SimpleLinkChecker - Check the HTTP response code for a link
 
 =head1 SYNOPSIS
 
+THIS MODULE HAS BEEN ABANDONED. YOU CAN ADOPT IT
+https://pause.perl.org/pause/authenquery?ACTION=pause_04about#takeover
+
 	use HTTP::SimpleLinkChecker;
 
 	my $code = HTTP::SimpleLinkChecker::check_link($url);

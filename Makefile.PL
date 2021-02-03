@@ -37,7 +37,10 @@ Perl.
 
 print <<"HERE";
 ======================================================================
+THIS IS AN ABANDONED MODULE
 
+You can adopt it if you like
+https://pause.perl.org/pause/authenquery?ACTION=pause_04about#takeover
 
 ======================================================================
 HERE
